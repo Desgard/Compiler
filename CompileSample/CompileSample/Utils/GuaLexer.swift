@@ -12,7 +12,8 @@ import SwifterSwift
 
 class GuaLexer: Lexer {
     
-    typealias Token = GuaToken
+    typealias TToken = GuaToken
+    typealias TTokenReader = GuaTokenReader
     
     var tokenText: String?
     
@@ -73,9 +74,74 @@ class GuaLexer: Lexer {
         return newState
     }
     
-    func tokenize(_ code: String) -> TokenReader {
+    /// 解析字符串，形成 Token
+    func tokenize(_ code: String) -> GuaTokenReader {
         tokens = []
-        return GuaTokenReader()
+        self.token = GuaToken()
+        var state = DfaState.initial
+        tokenText = ""
+        for ich in 0 ..< code.count {
+            let index: String.Index = code.index(code.startIndex, offsetBy: ich)
+            let ch = String(code[index])
+            switch state {
+            case .initial:
+                state = initToken(ch)
+                continue
+                
+            case .id:
+                if isAlpha(ch) || isDigit(ch) {
+                    tokenText?.append(ch)
+                } else {
+                    state = initToken(ch)
+                }
+                
+            case .gt:
+                if ch == "=" {
+                    self.token!.type = .ge
+                    state = .ge
+                    tokenText?.append(ch)
+                } else {
+                    state = initToken(ch)
+                }
+                
+            case .ge, .assignment, .plus, .minus, .star, .slash, .semiColon, .leftParen, .rightParen:
+                state = initToken(ch)
+                
+            case .intLiteral:
+                if isDigit(ch) {
+                    tokenText?.append(ch)
+                } else {
+                    state = initToken(ch)
+                }
+                
+            case .id_int1:
+                if ch == "n" {
+                    state = .id_int2
+                    tokenText?.append(ch)
+                }
+                else if isDigit(ch) || isAlpha(ch) {
+                    state = .id
+                    tokenText?.append(ch)
+                }
+                else {
+                    state = initToken(ch)
+                }
+                
+            case .id_int3:
+                if isBlank(ch) {
+                    token?.type = .int
+                    state = initToken(ch)
+                } else {
+                    state = .id
+                    tokenText?.append(ch)
+                }
+                
+            default:
+                break
+            }
+            
+        }
+        return GuaTokenReader(tokens: tokens)
     }
     
 }

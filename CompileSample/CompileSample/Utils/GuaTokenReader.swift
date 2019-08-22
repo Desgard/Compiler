@@ -10,14 +10,16 @@ import Foundation
 
 class GuaTokenReader: TokenReader {
     
-    var tokens: [Token]
+    typealias TToken = GuaToken
+    
+    var tokens: [GuaToken]
     var pos: Int = 0
     
-    init(tokens: [Token] = []) {
+    init(tokens: [GuaToken] = []) {
         self.tokens = tokens
     }
     
-    func read() -> Token? {
+    func read() -> GuaToken? {
         if pos < tokens.count {
             pos += 1
             return tokens[pos - 1]
@@ -25,7 +27,7 @@ class GuaTokenReader: TokenReader {
         return nil
     }
     
-    func peek() -> Token? {
+    func peek() -> GuaToken? {
         if pos < tokens.count {
             return tokens[pos]
         }

@@ -10,3 +10,10 @@ import Foundation
 
 print("Hello, World!")
 
+
+let lexer: GuaLexer = GuaLexer()
+let script: String = "int age = 45;"
+let tokenReader = lexer.tokenize(script)
+
+GuaLexer.dump(tokenReader)
+
