@@ -1,0 +1,22 @@
+PODS:
+  - Nimble (8.0.2)
+  - SwifterSwift/Foundation (5.0.0)
+  - SwifterSwift/SwiftStdlib (5.0.0)
+
+DEPENDENCIES:
+  - Nimble (~> 8.0)
+  - SwifterSwift/Foundation (~> 5.0.0)
+  - SwifterSwift/SwiftStdlib (~> 5.0.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Nimble
+    - SwifterSwift
+
+SPEC CHECKSUMS:
+  Nimble: 622629381bda1dd5678162f21f1368cec7cbba60
+  SwifterSwift: 96f90594b370802f01647c2b1229c74a84ffafee
+
+PODFILE CHECKSUM: fdf793b0b35eab72be62076dd08979ed7ad1fa27
+
+COCOAPODS: 1.7.5

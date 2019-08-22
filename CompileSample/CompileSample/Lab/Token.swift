@@ -6,6 +6,7 @@
 //  Copyright © 2019 Harry Twan. All rights reserved.
 //
 
-protocol Token {
-    var text: String { get }
+public protocol Token {
+    var text: String? { get set }
+    var type: TokenType? { get set }
 }
