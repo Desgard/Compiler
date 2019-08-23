@@ -11,7 +11,7 @@ import SwifterSwift
 
 
 class GuaLexer: Lexer {
-    
+
     typealias TToken = GuaToken
     typealias TTokenReader = GuaTokenReader
     
@@ -33,6 +33,7 @@ class GuaLexer: Lexer {
         return ch.isWhitespace
     }
     
+    @discardableResult
     func initToken(_ ch: String) -> DfaState {
 
         guard let tokenText = tokenText, let token = token else {
@@ -54,7 +55,7 @@ class GuaLexer: Lexer {
             } else {
                 newState = .id
             }
-            token.type = .identifier
+            self.token!.type = .identifier
             self.tokenText! += ch
         }
         else if isDigit(ch) {
@@ -68,8 +69,10 @@ class GuaLexer: Lexer {
             self.tokenText! += ch
         }
         else {
-            newState = .intLiteral
+            newState = .initial
         }
+        
+        
 
         return newState
     }
@@ -79,11 +82,13 @@ class GuaLexer: Lexer {
         tokens = []
         self.token = GuaToken()
         var state = DfaState.initial
+        var ch = ""
         tokenText = ""
         for ich in 0 ..< code.count {
             let index: String.Index = code.index(code.startIndex, offsetBy: ich)
-            let ch = String(code[index])
+            ch = String(code[index])
             switch state {
+                
             case .initial:
                 state = initToken(ch)
                 continue
@@ -127,6 +132,19 @@ class GuaLexer: Lexer {
                     state = initToken(ch)
                 }
                 
+            case .id_int2:
+                if ch == "t" {
+                    state = .id_int3
+                    tokenText?.append(ch)
+                }
+                else if isDigit(ch) || isAlpha(ch) {
+                    state = .id
+                    tokenText?.append(ch)
+                }
+                else {
+                    state = initToken(ch)
+                }
+                
             case .id_int3:
                 if isBlank(ch) {
                     token?.type = .int
@@ -139,8 +157,12 @@ class GuaLexer: Lexer {
             default:
                 break
             }
-            
         }
+        
+        if let tokenText = tokenText, tokenText.count > 0 {
+            initToken(ch)
+        }
+        
         return GuaTokenReader(tokens: tokens)
     }
     

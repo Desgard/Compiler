@@ -32,19 +32,24 @@ protocol Lexer {
     func tokenize(_ code: String) -> TTokenReader
     
     /// dump 所有的 Token
-    static func dump(_ tokenReader: TTokenReader)
+    @discardableResult
+    static func dump(_ tokenReader: TTokenReader) -> [Self.TTokenReader.TToken]
 }
 
 
 extension Lexer {
     
-    static func dump(_ tokenReader: TTokenReader) {
-        print("text\ttype")
+    @discardableResult
+    static func dump(_ tokenReader: TTokenReader) -> [Self.TTokenReader.TToken] {
+        print("text \t\t type")
+        var res: [Self.TTokenReader.TToken] = []
         while let token = tokenReader.read() {
             if let text = token.text, let type = token.type {
-                print("\t\t\(text)\(type)")
+                print("\(text) \t\t \(type)")
+                res.append(token)
             }
         }
+        return res
     }
 }
 
