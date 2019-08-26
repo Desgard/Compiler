@@ -20,6 +20,7 @@
 		84C2012D230908C4005E3476 /* Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2012C230908C4005E3476 /* Lexer.swift */; };
 		84C2012F230909C6005E3476 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2012E230909C6005E3476 /* Token.swift */; };
 		84C2013123090BD0005E3476 /* TokenReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2013023090BD0005E3476 /* TokenReader.swift */; };
+		84C201D723104F16005E3476 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C201D623104F16005E3476 /* Parser.swift */; };
 		DC88D0E9B8DB09141B565B8F /* libPods-CompileSampleUnitTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF846CBCA84D6A2E51BB4036 /* libPods-CompileSampleUnitTest.a */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		84C2012C230908C4005E3476 /* Lexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lexer.swift; sourceTree = "<group>"; };
 		84C2012E230909C6005E3476 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		84C2013023090BD0005E3476 /* TokenReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenReader.swift; sourceTree = "<group>"; };
+		84C201D623104F16005E3476 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		A757E82BF35FC416706D1CB7 /* Pods-CompileSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CompileSample.debug.xcconfig"; path = "Target Support Files/Pods-CompileSample/Pods-CompileSample.debug.xcconfig"; sourceTree = "<group>"; };
 		B431FB2F0A463BBFFF17A9DA /* libPods-CompileSample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CompileSample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF846CBCA84D6A2E51BB4036 /* libPods-CompileSampleUnitTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CompileSampleUnitTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				84C2012C230908C4005E3476 /* Lexer.swift */,
+				84C201D623104F16005E3476 /* Parser.swift */,
 				84C2012E230909C6005E3476 /* Token.swift */,
 				84919BFC230E6742002AAAE6 /* TokenType.swift */,
 				84C2013023090BD0005E3476 /* TokenReader.swift */,
@@ -315,6 +318,7 @@
 				84919C08230EAB13002AAAE6 /* GuaTokenReader.swift in Sources */,
 				84919C04230E7703002AAAE6 /* GuaParser.swift in Sources */,
 				84C2012D230908C4005E3476 /* Lexer.swift in Sources */,
+				84C201D723104F16005E3476 /* Parser.swift in Sources */,
 				84919C06230E781B002AAAE6 /* GuaToken.swift in Sources */,
 				84C201242308E2F1005E3476 /* main.swift in Sources */,
 				84919BFD230E6742002AAAE6 /* TokenType.swift in Sources */,
