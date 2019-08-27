@@ -29,7 +29,13 @@ protocol Parser {
     func intDeclare(_ tokens: TTokenReader) throws -> TASTNode
     
     /// 加法表达式
-    func additive(_ thokens: TTokenReader) throws -> TASTNode
+    func additive(_ tokens: TTokenReader) throws -> TASTNode
     
-//    func 
+    /// 乘法表达式
+    func multiplicative(_ tokens: TTokenReader) throws -> TASTNode
+    
+    /// 基础表达式
+    func primary(_ tokens: TTokenReader) throws -> TASTNode
+    
+    
 }

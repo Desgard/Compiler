@@ -9,15 +9,14 @@
 import Foundation
 
 protocol ASTNode {
-    /// 父节点
-    func getParent() -> ASTNode
     
-    /// 子节点
-    func getChildren() -> [ASTNode]
+    var parent: Self? { get set }
     
-    ///  AST 类型
-    func getType() -> ASTNodeType
+    var children: [Self] { get set }
     
-    /// 文本值
-    func getText() -> String
+    var nodeType: ASTNodeType? { get set }
+    
+    var text: String? { get set }
+    
+    func add(_ child: Self)
 }

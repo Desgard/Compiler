@@ -16,6 +16,7 @@
 		84919C08230EAB13002AAAE6 /* GuaTokenReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84919C07230EAB13002AAAE6 /* GuaTokenReader.swift */; };
 		84919C0B230EAC82002AAAE6 /* GuaLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84919C0A230EAC82002AAAE6 /* GuaLexer.swift */; };
 		84919C13230ECA28002AAAE6 /* CompileSampleUnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84919C12230ECA28002AAAE6 /* CompileSampleUnitTest.swift */; };
+		849B7A0A2314458100501177 /* GuaASTNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B7A092314458100501177 /* GuaASTNode.swift */; };
 		84C201242308E2F1005E3476 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C201232308E2F1005E3476 /* main.swift */; };
 		84C2012D230908C4005E3476 /* Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2012C230908C4005E3476 /* Lexer.swift */; };
 		84C2012F230909C6005E3476 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C2012E230909C6005E3476 /* Token.swift */; };
@@ -49,6 +50,7 @@
 		84919C10230ECA28002AAAE6 /* CompileSampleUnitTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CompileSampleUnitTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84919C12230ECA28002AAAE6 /* CompileSampleUnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompileSampleUnitTest.swift; sourceTree = "<group>"; };
 		84919C14230ECA28002AAAE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		849B7A092314458100501177 /* GuaASTNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuaASTNode.swift; sourceTree = "<group>"; };
 		84C201202308E2F1005E3476 /* CompileSample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CompileSample; sourceTree = BUILT_PRODUCTS_DIR; };
 		84C201232308E2F1005E3476 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		84C2012C230908C4005E3476 /* Lexer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lexer.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				84919C03230E7703002AAAE6 /* GuaParser.swift */,
+				849B7A092314458100501177 /* GuaASTNode.swift */,
 				84919C05230E781B002AAAE6 /* GuaToken.swift */,
 				84919C07230EAB13002AAAE6 /* GuaTokenReader.swift */,
 				84919C0A230EAC82002AAAE6 /* GuaLexer.swift */,
@@ -318,6 +321,7 @@
 				84919C08230EAB13002AAAE6 /* GuaTokenReader.swift in Sources */,
 				84919C04230E7703002AAAE6 /* GuaParser.swift in Sources */,
 				84C2012D230908C4005E3476 /* Lexer.swift in Sources */,
+				849B7A0A2314458100501177 /* GuaASTNode.swift in Sources */,
 				84C201D723104F16005E3476 /* Parser.swift in Sources */,
 				84919C06230E781B002AAAE6 /* GuaToken.swift in Sources */,
 				84C201242308E2F1005E3476 /* main.swift in Sources */,
